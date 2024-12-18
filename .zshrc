@@ -110,6 +110,9 @@
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(oh-my-posh init zsh)"
+
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+eval "$(~/.local/bin/oh-my-posh init zsh --config ~/.config/op/.peter-theme.omp.yaml)"
+FPATH="$HOME/.docker/completions:$FPATH"
+autoload -Uz compinit
+compinit
